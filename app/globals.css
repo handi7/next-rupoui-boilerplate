@@ -1,26 +1,110 @@
 @import "tailwindcss";
 
+@plugin "rupoui/tailwind";
+@source "../node_modules/rupoui/dist/**/*.{js,ts,jsx,tsx}";
+
+@custom-variant dark (&:is(.dark *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Backgrounds */
+  --rui-background: 255 255 255;
+  --rui-foreground: 17 24 39; /* gray-900 */
+  --rui-divider: 229 231 235; /* gray-200 */
+  --rui-overlay: 0 0 0;
+  --rui-focus: 59 130 246; /* blue-500 */
+
+  /* Content Surfaces */
+  --rui-content1: 255 255 255;
+  --rui-content1-foreground: 17 24 39;
+
+  --rui-content2: 243 244 246; /* gray-100 */
+  --rui-content2-foreground: 17 24 39;
+
+  --rui-content3: 229 231 235; /* gray-200 */
+  --rui-content3-foreground: 17 24 39;
+
+  --rui-content4: 209 213 219; /* gray-300 */
+  --rui-content4-foreground: 17 24 39;
+
+  /* Default (Zinc) */
+  --rui-default: 212 212 216; /* zinc-300 */
+  --rui-default-foreground: 0 0 0;
+  --rui-default-hover: 161 161 170; /* zinc-400 */
+
+  /* Primary (Blue) */
+  --rui-primary: 37 99 235; /* blue-600 */
+  --rui-primary-foreground: 255 255 255;
+  --rui-primary-hover: 29 78 216; /* blue-700 */
+
+  /* Secondary (Purple) */
+  --rui-secondary: 147 51 234; /* purple-600 */
+  --rui-secondary-foreground: 255 255 255;
+  --rui-secondary-hover: 126 34 206; /* purple-700 */
+
+  /* Success (Emerald) */
+  --rui-success: 16 185 129; /* emerald-500 */
+  --rui-success-foreground: 255 255 255;
+  --rui-success-hover: 5 150 105; /* emerald-600 */
+
+  /* Warning (Amber) */
+  --rui-warning: 245 158 11; /* amber-500 */
+  --rui-warning-foreground: 255 255 255;
+  --rui-warning-hover: 217 119 6; /* amber-600 */
+
+  /* Danger (Red) */
+  --rui-danger: 239 68 68; /* red-500 */
+  --rui-danger-foreground: 255 255 255;
+  --rui-danger-hover: 220 38 38; /* red-600 */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+.dark {
+  /* Backgrounds */
+  --rui-background: 0 0 0;
+  --rui-foreground: 236 237 238;
+  --rui-divider: 39 39 42; /* zinc-800 */
+  --rui-overlay: 0 0 0;
+  --rui-focus: 59 130 246;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+  /* Content Surfaces */
+  --rui-content1: 24 24 27; /* zinc-900 */
+  --rui-content1-foreground: 236 237 238;
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  --rui-content2: 39 39 42; /* zinc-800 */
+  --rui-content2-foreground: 236 237 238;
+
+  --rui-content3: 63 63 70; /* zinc-700 */
+  --rui-content3-foreground: 236 237 238;
+
+  --rui-content4: 82 82 91; /* zinc-600 */
+  --rui-content4-foreground: 236 237 238;
+
+  /* Default */
+  --rui-default: 63 63 70; /* zinc-700 */
+  --rui-default-foreground: 255 255 255;
+  --rui-default-hover: 82 82 91; /* zinc-600 */
+
+  /* Primary */
+  --rui-primary: 59 130 246; /* blue-500 */
+  --rui-primary-foreground: 255 255 255;
+  --rui-primary-hover: 37 99 235; /* blue-600 */
+
+  /* Secondary */
+  --rui-secondary: 168 85 247; /* purple-500 */
+  --rui-secondary-foreground: 255 255 255;
+  --rui-secondary-hover: 147 51 234; /* purple-600 */
+
+  /* Success */
+  --rui-success: 16 185 129; /* emerald-500 */
+  --rui-success-foreground: 0 0 0;
+  --rui-success-hover: 5 150 105; /* emerald-600 */
+
+  /* Warning */
+  --rui-warning: 245 158 11; /* amber-500 */
+  --rui-warning-foreground: 0 0 0;
+  --rui-warning-hover: 217 119 6; /* amber-600 */
+
+  /* Danger */
+  --rui-danger: 239 68 68; /* red-500 */
+  --rui-danger-foreground: 255 255 255;
+  --rui-danger-hover: 220 38 38; /* red-600 */
 }
